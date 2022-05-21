@@ -1,0 +1,18 @@
+extends layout
+
+block formulario
+    div.container
+            h1="Agregar Productos"
+            form(method="POST" action="/api/productos")
+                .mb-3
+                label.form-label(for="title") titulo
+                input.form-control(type="text" id="title" name="titulo")
+                .mb-3
+                 label.form-label(for="price") precio
+                 input.form-control(type="text" id="price" name="precio")
+                .mb-3
+                  label.form-label(for="img") imagen
+                  input.form-control(type="text" id="img" name="img")
+                button.btn.btn-primary(type="submit") agregar
+                a.btn.btn-primary(href="http://localhost:8080/productos") Ver Productos
+

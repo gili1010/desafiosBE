@@ -82,7 +82,7 @@ const dbproductos = {
         }
         return productoBuscado
     },
-    agregarProducto: datos => {
+    agregarProducto: (datos) => {
         // deberia validar cosas
         // si ya existe? no la agrego
         // si le faltan datos? no la agrego

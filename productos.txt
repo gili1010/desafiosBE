@@ -1,0 +1,20 @@
+[
+  {
+    "id": 2,
+    "titulo": "cerveza",
+    "precio": "$180",
+    "img": "img"
+  },
+  {
+    "id": 1,
+    "titulo": "Gaseosa",
+    "precio": "$150",
+    "img": "img"
+  },
+  {
+    "id": 3,
+    "titulo": "pan",
+    "precio": "$180",
+    "img": "img"
+  }
+]

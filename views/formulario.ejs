@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Agregar Productos</h1>
+<form method="POST" action="/api/productos">
+    <div class="mb-3">
+      <label for="title" class="form-label">titulo</label>
+      <input type="text" class="form-control" id="title" name="titulo">
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">precio</label>
+        <input type="text" class="form-control" id="price" name="precio">
+      </div>
+      <div class="mb-3">
+        <label for="img" class="form-label">imagen</label>
+        <input type="text" class="form-control" id="img" name="img">
+      </div>
+    <button type="submit" class="btn btn-primary">agregar</button>
+    <a href="http://localhost:8080/ejs/productos" class="btn btn-primary">Ver Productos</a>
+  </form>

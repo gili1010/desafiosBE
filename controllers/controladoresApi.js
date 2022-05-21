@@ -2,7 +2,7 @@ const fs = require('fs')
 const { dbproductos } = require("../database/dbproductos.js")
 const Contenedor = require('../contenedor.js')
 
-const contenedor = new Contenedor('../productos.txt');
+const contenedor = new Contenedor('./productos.txt');
 
 const producto = {
     id:1,
@@ -16,24 +16,25 @@ const producto1 = {
     precio:`$180`,
     img:'img'
 }
-
-contenedor.save(producto).then((producto) =>{
-    return producto
-})
-
-async function y() {
-    await contenedor.save(producto1)
+const producto2 = {
+    id:3,
+    titulo:'pan',
+    precio:`$180`,
+    img:'img'
 }
-y();
+contenedor.save(producto1)
+contenedor.save(producto)
+contenedor.save(producto2)
 
-console.log(contenedor);
+console.log(contenedor.productos);
 
 /* let resultado = contenedor.leer()/* .then((list) => {
         return resultado = (list)
     }) */ 
 
 let x =Math.floor(Math.random()*10) ;
- 
+
+//=======================================================\\
 const controladoresApi = {
     getid: (req, res) => {
             res.json(dbproductos.obtenerSegunId(x));
@@ -55,11 +56,15 @@ const controladoresApi = {
             res.json(dbproductos.obtenerSegunTitulo(req.query.titulo))
        }else{
             res.json(dbproductos.obtenerTodos())
+            //res.json(contenedor.productos)
        }
     },
     postproductos:(req,res) => {
         const productoAgregado = dbproductos.agregarProducto(req.body)
-        res.status(201).json(productoAgregado)
+        //res.status(201).json(productoAgregado)
+        //res.redirect('../productos')
+        res.redirect('../ejs/productos')
+        console.log("producto agregado")
     },
     deleteproducto:(req,res) =>{
         const id = req.params.idProducto
